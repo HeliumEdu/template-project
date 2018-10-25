@@ -1,0 +1,9 @@
+ansibleCopyrightNameVar: project_developer
+ansibleRelativeDir: ansible
+gitProject: https://github.com/{%PROJECT_GITHUB_USER%}
+hostProvisionCommand: sudo apt-get update && sudo apt-get install -y python && sudo
+  apt-get -y autoremove
+projects: [{%PROJECT_ID%}]
+projectsRelativeDir: .
+serverBinFilename: bin/runserver
+versionInfo: {path: conf/configs/common.py, project: .}
