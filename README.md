@@ -1,6 +1,6 @@
-[![Build Status](https://travis-ci.org/HeliumEdu/{%PROJECT_ID%}.svg?branch=master)](https://travis-ci.org/HeliumEdu/{%PROJECT_ID%})
-[![Updates](https://pyup.io/repos/github/HeliumEdu/{%PROJECT_ID%}/shield.svg)](https://pyup.io/repos/github/HeliumEdu/{%PROJECT_ID%}/)
-[![Python 3](https://pyup.io/repos/github/HeliumEdu/{%PROJECT_ID%}/python-3-shield.svg)](https://pyup.io/repos/github/HeliumEdu/{%PROJECT_ID%}/)
+[![Build Status](https://travis-ci.org/{%PROJECT_GITHUB_USER%}/{%PROJECT_ID%}.svg?branch=master)](https://travis-ci.org/{%PROJECT_GITHUB_USER%}/{%PROJECT_ID%})
+[![Updates](https://pyup.io/repos/github/{%PROJECT_GITHUB_USER%}/{%PROJECT_ID%}/shield.svg)](https://pyup.io/repos/github/{%PROJECT_GITHUB_USER%}/{%PROJECT_ID%}/)
+[![Python 3](https://pyup.io/repos/github/{%PROJECT_GITHUB_USER%}/{%PROJECT_ID%}/python-3-shield.svg)](https://pyup.io/repos/github/{%PROJECT_GITHUB_USER%}/{%PROJECT_ID%}/)
 
 
 {%PROJECT_NAME%}
