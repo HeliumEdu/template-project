@@ -6,5 +6,5 @@ __version__ = '0.1.0'
 
 
 class CommonConfig(AppConfig):
-    name = '{%PROJECT_ID%}.app'
+    name = '{%PROJECT_ID_LOWER%}.app'
     verbose_name = 'App'
