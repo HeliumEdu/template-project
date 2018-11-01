@@ -55,7 +55,7 @@ INSTALLED_APPS = (
     # Third-party modules
     'pipeline',
     # Project modules
-    'trackimo.sestosms',
+    '{%PROJECT_ID_LOWER%}.app',
 )
 
 MIDDLEWARE = (
