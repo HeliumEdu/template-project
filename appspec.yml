@@ -14,7 +14,7 @@ hooks:
     - location: deploy/scripts/install_apache_dependencies.sh
       timeout: 300
       runas: ubuntu
-    - location: deploy/scripts/install_{%PROJECT_ID%}.sh
+    - location: deploy/scripts/install_project.sh
       timeout: 300
       runas: ubuntu
   ApplicationStart:
