@@ -95,7 +95,7 @@ LOGGING = {
             'level': 'ERROR',
             'propagate': False,
         },
-        '{%PROJECT_ID%}.app': {
+        '{%PROJECT_ID_LOWER%}.app': {
             'handlers': ['{}_app'.format(PROJECT_ID), 'rollbar'],
             'level': 'INFO',
         },
