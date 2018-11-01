@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-{%PROJECT_ID%}_VENV=${{%PROJECT_ID%}_VENV:=${DIR}/../.venv}
+{%PROJECT_ID_UPPER%}_VENV=${{%PROJECT_ID_UPPER%}_VENV:=${DIR}/../.venv}
 
 make install migrate -C ${DIR}/..
 
-source ${{%PROJECT_ID%}_VENV}/bin/activate
+source ${{%PROJECT_ID_UPPER%}_VENV}/bin/activate
 
 python ${DIR}/../manage.py runserver
