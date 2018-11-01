@@ -8,7 +8,7 @@ from django.conf import settings as config
 from django.conf.urls import include, url
 from django.views import static
 
-import trackimo.sestosms.urls
+import {%PROJECT_ID_LOWER%}.app.urls
 
 __author__ = 'Alex Laird'
 __copyright__ = 'Copyright 2018, Alex Laird'
@@ -16,7 +16,7 @@ __version__ = '0.1.0'
 
 urlpatterns = [
     # Include app-specific URL files
-    url(r'^', include(trackimo.sestosms.urls)),
+    url(r'^', include({%PROJECT_ID_LOWER%}.app.urls)),
 ]
 
 if config.DEBUG or 'test' in sys.argv:
