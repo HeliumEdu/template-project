@@ -47,7 +47,7 @@ else:
 
 # Initialize some global settings
 locals()['DEV_SERVER'] = DEV_SERVER
-PROJECT_ID = os.environ.get('{%PROJECT_ID%}_ID')
+PROJECT_ID = os.environ.get('{%PROJECT_ID_UPPER%}_ID')
 locals()['PROJECT_ID'] = PROJECT_ID
 
 # Load conf properties into the local scope
