@@ -2,8 +2,7 @@
 [![Updates](https://pyup.io/repos/github/{%PROJECT_GITHUB_USER%}/{%PROJECT_ID%}/shield.svg)](https://pyup.io/repos/github/{%PROJECT_GITHUB_USER%}/{%PROJECT_ID%}/)
 [![Python 3](https://pyup.io/repos/github/{%PROJECT_GITHUB_USER%}/{%PROJECT_ID%}/python-3-shield.svg)](https://pyup.io/repos/github/{%PROJECT_GITHUB_USER%}/{%PROJECT_ID%}/)
 
-{%PROJECT_NAME%}
-================
+# {%PROJECT_NAME%}
 
 ## Prerequisites
 
@@ -40,4 +39,4 @@ Now you're all set! To start the development server, execute:
 python manage.py runserver
 ```
 
-A development server will be started at http://localhost:8000.
+A development server will be started at <http://localhost:8000>.
