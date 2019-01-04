@@ -6,8 +6,9 @@
 ================
 
 ## Prerequisites
-* Python (>= 3.6)
-* Pip (>= 9.0)
+
+- Python (>= 3.6)
+- Pip (>= 9.0)
 
 ## Getting Started
 The project is developed using Python and [Django](https://www.djangoproject.com).
