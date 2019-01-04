@@ -9,7 +9,7 @@ from django.core.wsgi import get_wsgi_application
 
 __author__ = 'Alex Laird'
 __copyright__ = 'Copyright 2018, Alex Laird'
-__version__ = '0.1.0'
+__version__ = '1.0.1'
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "conf.settings")
 
