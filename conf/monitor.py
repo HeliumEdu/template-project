@@ -9,9 +9,9 @@ import signal
 import sys
 import threading
 
-__author__ = 'Alex Laird'
-__copyright__ = 'Copyright 2018, Alex Laird'
-__version__ = '1.0.1'
+__author__ = "Alex Laird"
+__copyright__ = "Copyright 2018, Helium Edu"
+__version__ = "1.0.2"
 
 _interval = 1.0
 _times = {}
@@ -24,9 +24,9 @@ _lock = threading.Lock()
 
 def _restart(path):
     _queue.put(True)
-    prefix = 'monitor (pid=%d):' % os.getpid()
-    print('{} Change detected to "{}".'.format(prefix, path))
-    print('{} Triggering process restart.'.format(prefix))
+    prefix = "monitor (pid=%d):" % os.getpid()
+    print("{} Change detected to \"{}\".".format(prefix, path))
+    print("{} Triggering process restart.".format(prefix))
     os.kill(os.getpid(), signal.SIGINT)
 
 
@@ -68,12 +68,12 @@ def _monitor():
         # Check modification times on all files in sys.modules.
 
         for module in list(sys.modules.values()):
-            if not hasattr(module, '__file__'):
+            if not hasattr(module, "__file__"):
                 continue
-            path = getattr(module, '__file__')
+            path = getattr(module, "__file__")
             if not path:
                 continue
-            if os.path.splitext(path)[1] in ['.pyc', '.pyo', '.pyd']:
+            if os.path.splitext(path)[1] in [".pyc", ".pyo", ".pyd"]:
                 path = path[:-1]
             if _modified(path):
                 return _restart(path)
@@ -121,7 +121,7 @@ def start(interval=0.5):
     global _running
     _lock.acquire()
     if not _running:
-        print('Monitoring codebase for changes: (pid={})'.format(os.getpid()))
+        print("Monitoring codebase for changes: (pid={})".format(os.getpid()))
         _running = True
         _thread.start()
     _lock.release()

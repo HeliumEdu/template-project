@@ -8,12 +8,12 @@ import warnings
 from conf.settings import PROJECT_ID
 from conf.configs import common
 
-__author__ = 'Alex Laird'
-__copyright__ = 'Copyright 2018, Alex Laird'
-__version__ = '1.0.1'
+__author__ = "Alex Laird"
+__copyright__ = "Copyright 2018, Helium Edu"
+__version__ = "1.0.2"
 
 # Define the base working directory of the application
-BASE_DIR = os.path.normpath(os.path.join(os.path.abspath(os.path.dirname(__file__)), '..', '..'))
+BASE_DIR = os.path.normpath(os.path.join(os.path.abspath(os.path.dirname(__file__)), "..", ".."))
 
 # Application definition
 
@@ -28,61 +28,61 @@ TEMPLATES = common.TEMPLATES
 # Security
 
 INTERNAL_IPS = (
-    '127.0.0.1',
+    "127.0.0.1",
 )
 
 # Logging
 
 LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {
-        'standard': {
-            'format': '[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s',
-            'datefmt': '%Y-%m-%d %H:%M:%S'
+    "version": 1,
+    "disable_existing_loggers": False,
+    "formatters": {
+        "standard": {
+            "format": "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s",
+            "datefmt": "%Y-%m-%d %H:%M:%S"
         },
     },
-    'handlers': {
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-            'formatter': 'standard'
+    "handlers": {
+        "console": {
+            "level": "DEBUG",
+            "class": "logging.StreamHandler",
+            "formatter": "standard"
         },
     },
-    'loggers': {
-        'django': {
-            'handlers': ['console'],
-            'propagate': True,
-            'level': 'WARN',
+    "loggers": {
+        "django": {
+            "handlers": ["console"],
+            "propagate": True,
+            "level": "WARN",
         },
-        'django.db.backends': {
-            'handlers': ['console'],
-            'level': 'INFO',
-            'propagate': False,
+        "django.db.backends": {
+            "handlers": ["console"],
+            "level": "INFO",
+            "propagate": False,
         },
-        'django.request': {
-            'handlers': ['console'],
-            'level': 'ERROR',
-            'propagate': False,
+        "django.request": {
+            "handlers": ["console"],
+            "level": "ERROR",
+            "propagate": False,
         },
         str(PROJECT_ID): {
-            'handlers': ['console'],
-            'level': 'DEBUG',
+            "handlers": ["console"],
+            "level": "DEBUG",
         }
     }
 }
 
 # When in development, we want to be warned about dates that don't have a timezone
-warnings.filterwarnings('error', r"DateTimeField .* received a naive datetime", RuntimeWarning,
-                        r'django\.db\.models\.fields')
+warnings.filterwarnings("error", r"DateTimeField .* received a naive datetime", RuntimeWarning,
+                        r"django\.db\.models\.fields")
 
 # Cache
 
-if os.environ.get('USE_IN_MEMORY_DB', 'True') == 'True':
+if os.environ.get("USE_IN_MEMORY_DB", "True") == "True":
     CACHES = {
-        'default': {
-            'BACKEND': '{%PROJECT_ID%}.app.cache.locmemkeys.LocMemKeysCache',
-            'LOCATION': 'unique-snowflake',
+        "default": {
+            "BACKEND": "{%PROJECT_ID%}.app.cache.locmemkeys.LocMemKeysCache",
+            "LOCATION": "unique-snowflake",
         }
     }
 else:
@@ -93,11 +93,11 @@ else:
 
 # Database
 
-if os.environ.get('USE_IN_MEMORY_DB', 'True') == 'True':
+if os.environ.get("USE_IN_MEMORY_DB", "True") == "True":
     DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
         }
     }
 else:
@@ -107,5 +107,5 @@ else:
 
 # Pipelines
 
-common.PIPELINE['CSS_COMPRESSOR'] = None
-common.PIPELINE['JS_COMPRESSOR'] = None
+common.PIPELINE["CSS_COMPRESSOR"] = None
+common.PIPELINE["JS_COMPRESSOR"] = None

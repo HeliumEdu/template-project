@@ -7,9 +7,9 @@ import os
 from django.conf import settings
 from django.core.wsgi import get_wsgi_application
 
-__author__ = 'Alex Laird'
-__copyright__ = 'Copyright 2018, Alex Laird'
-__version__ = '1.0.1'
+__author__ = "Alex Laird"
+__copyright__ = "Copyright 2018, Helium Edu"
+__version__ = "1.0.2"
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "conf.settings")
 

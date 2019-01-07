@@ -4,8 +4,8 @@ This generic settings builder reads the appropriate configuration file for diffe
 Note that the system environment variable ENVIRONMENT should be set to a slug that matches the deployed environment.
 
 * If ENVIRONMENT is set to `dev`, `dev.py` will be used for configuration, using values from `.env`
-* If ENVIRONMENT is not 'dev', `deploy.py` will be used for configuration, using system environment variables
-* If `test` is passed as an argument, ENVIRONMENT is ignored and `test.py` is used for configuration, reading from .env`
+* If ENVIRONMENT is not `dev`, `deploy.py` will be used for configuration, using system environment variables
+* If `test` is passed as an argument, ENVIRONMENT is ignored and `test.py` is used for configuration, reading from `.env`
 
 All configuration files first read `common.py` before applying deployment-specific configurations.
 """
@@ -14,46 +14,46 @@ import os
 import sys
 from builtins import str
 
-__author__ = 'Alex Laird'
-__copyright__ = 'Copyright 2018, Alex Laird'
-__version__ = '1.0.1'
+__author__ = "Alex Laird"
+__copyright__ = "Copyright 2018, Helium Edu"
+__version__ = "1.0.2"
 
 # Are we running on the dev server
 DEV_SERVER = False
 
-if 'test' not in sys.argv:
-    if os.environ.get('ENVIRONMENT') == 'dev' or (len(sys.argv) > 1 and sys.argv[1] == 'runserver'):
-        conf = 'dev'
-        if len(sys.argv) > 1 and sys.argv[1] == 'runserver':
+if "test" not in sys.argv:
+    if os.environ.get("ENVIRONMENT") == "dev" or (len(sys.argv) > 1 and sys.argv[1] == "runserver"):
+        conf = "dev"
+        if len(sys.argv) > 1 and sys.argv[1] == "runserver":
             DEV_SERVER = True
     else:
-        conf = 'deploy'
+        conf = "deploy"
 
-    if conf == 'dev':
-        print('Loading .env file')
+    if conf == "dev":
+        print("Loading .env file")
 
         import dotenv
 
         dotenv.read_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"), True)
 # If we're running tests, run a streamlined settings file for efficiency
 else:
-    conf = 'test'
+    conf = "test"
 
-    print('Loading .env file')
+    print("Loading .env file")
 
     import dotenv
 
     dotenv.read_dotenv(os.path.join(os.path.dirname(__file__), "..", ".env"), True)
 
 # Initialize some global settings
-locals()['DEV_SERVER'] = DEV_SERVER
-PROJECT_ID = os.environ.get('{%PROJECT_ID_UPPER%}_ID')
-locals()['PROJECT_ID'] = PROJECT_ID
+locals()["DEV_SERVER"] = DEV_SERVER
+PROJECT_ID = os.environ.get("{%PROJECT_ID_UPPER%}_ID")
+locals()["PROJECT_ID"] = PROJECT_ID
 
 # Load conf properties into the local scope
-print('Using conf.configs.{}'.format(conf))
-common_conf_module = __import__('conf.configs.common', globals(), locals(), [PROJECT_ID])
-conf_module = __import__('conf.configs.{}'.format(conf), globals(), locals(), [PROJECT_ID])
+print("Using conf.configs.{}".format(conf))
+common_conf_module = __import__("conf.configs.common", globals(), locals(), [PROJECT_ID])
+conf_module = __import__("conf.configs.{}".format(conf), globals(), locals(), [PROJECT_ID])
 
 # Load common conf properties into the local scope
 for setting in dir(common_conf_module):

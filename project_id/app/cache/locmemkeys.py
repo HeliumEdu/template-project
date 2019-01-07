@@ -3,8 +3,8 @@ import re
 from django.core.cache.backends.locmem import LocMemCache
 
 __author__ = "Alex Laird"
-__copyright__ = "Copyright 2018, Alex Laird"
-__version__ = '1.0.1'
+__copyright__ = "Copyright 2018, Helium Edu"
+__version__ = "1.0.2"
 
 
 class LocMemKeysCache(LocMemCache):
@@ -20,6 +20,6 @@ class LocMemKeysCache(LocMemCache):
         with self._lock.reader():
             for key, value in self._cache.items():
                 if pattern.match(key):
-                    keys.append(key.lstrip(':' + str(self.version)).lstrip(':' + str(self.key_prefix)))
+                    keys.append(key.lstrip(":" + str(self.version)).lstrip(":" + str(self.key_prefix)))
 
         return keys
