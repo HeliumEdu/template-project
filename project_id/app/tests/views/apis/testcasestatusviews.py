@@ -21,7 +21,7 @@ class TestCaseStatusViews(APITestCase):
         # THEN
         content = json.loads(response.content.decode('utf-8'))
         self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(content['components']), 5)
+        self.assertEqual(len(content['components']), 2)
         self.assertEqual(content['status'], 'operational')
 
         for component in content['components']:
@@ -39,20 +39,9 @@ class TestCaseStatusViews(APITestCase):
         # THEN
         content = json.loads(response.content.decode('utf-8'))
         self.assertEqual(response.status_code, status.HTTP_500_INTERNAL_SERVER_ERROR)
-        self.assertEqual(len(content['components']), 5)
+        self.assertEqual(len(content['components']), 2)
         self.assertEqual(content['status'], 'minor_outage')
 
         for component in content['components']:
             if component == 'Database':
                 self.assertEqual(content['components'][component]['status'], 'minor_outage')
-
-    @mock.patch('health_check.backends.BaseHealthCheckBackend.check_status')
-    def test_health(self, mock_check_status):
-        # WHEN
-        response = self.client.get(reverse('resource_health'))
-
-        # THEN
-        content = json.loads(response.content.decode('utf-8'))
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertEqual(len(content['components']), 7)
-        self.assertEqual(content['status'], 'operational')
