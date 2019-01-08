@@ -8,8 +8,8 @@ omit =
     */schemas.py
     */tests/**
     */migrations/**
-    {%PROJECT_ID%}/app/cache/locmemkeys.py
-    {%PROJECT_ID%}/app/models/base.py
+    {%PROJECT_ID_LOWER%}/app/cache/locmemkeys.py
+    {%PROJECT_ID_LOWER%}/app/models/base.py
 
 [report]
 fail_under = 90
