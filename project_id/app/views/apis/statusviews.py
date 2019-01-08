@@ -36,12 +36,12 @@ def _run_checks(plugins):
 def _build_components_status(plugins):
     components = {}
     system_level = sys.maxsize
-    system_status = _('operational')
+    system_status = _("operational")
     for p in plugins:
         components[str(p.identifier())] = {
-            "status": p.severity[1] if p.errors else _('operational'),
+            "status": p.severity[1] if p.errors else _("operational"),
             "description": p.description,
-            "took": round(getattr(p, 'time_taken', -1), 4)
+            "took": round(getattr(p, "time_taken", -1), 4)
         }
         if p.critical and p.errors and p.severity[0] < system_level:
             system_level = p.severity[0]

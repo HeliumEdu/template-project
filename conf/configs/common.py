@@ -9,7 +9,7 @@ from conf.settings import PROJECT_ID
 
 __author__ = "Alex Laird"
 __copyright__ = "Copyright 2018, Helium Edu"
-__version__ = "1.0.2"
+__version__ = "1.0.3"
 
 # Define the base working directory of the application
 BASE_DIR = os.path.normpath(os.path.join(os.path.abspath(os.path.dirname(__file__)), "..", ".."))
@@ -33,12 +33,6 @@ PROJECT_VERSION = __version__
 AWS_S3_ACCESS_KEY_ID = os.environ.get("{%PROJECT_ID_UPPER%}_AWS_S3_ACCESS_KEY_ID")
 AWS_S3_SECRET_ACCESS_KEY = os.environ.get("{%PROJECT_ID_UPPER%}_AWS_S3_SECRET_ACCESS_KEY")
 
-# Twilio
-
-TWILIO_ACCOUNT_SID = os.environ.get("{%PROJECT_ID_UPPER%}_TWILIO_ACCOUNT_SID")
-TWILIO_AUTH_TOKEN = os.environ.get("{%PROJECT_ID_UPPER%}_TWILIO_AUTH_TOKEN")
-TWILIO_SMS_FROM = os.environ.get("{%PROJECT_ID_UPPER%}_TWILIO_SMS_FROM")
-
 #############################
 # Default lists for host-specific configurations
 #############################
@@ -53,12 +47,12 @@ INSTALLED_APPS = (
     "django.contrib.staticfiles",
     "django.contrib.humanize",
     # Health modules
-    'health_check',
-    'health_check.cache',
-    'health_check.db',
+    "health_check",
+    "health_check.cache",
+    "health_check.db",
     # Third-party modules
     "pipeline",
-    'rest_framework',
+    "rest_framework",
     # Project modules
     "{%PROJECT_ID_LOWER%}.app",
 )

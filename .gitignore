@@ -3,6 +3,7 @@
 .idea/
 *.iml
 build
+src
 *.retry
 db.sqlite3
 db.sqlite3-journal

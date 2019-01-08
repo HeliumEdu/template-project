@@ -21,9 +21,9 @@ class InfoResourceView(ViewSet):
 
     def info(self, request, *args, **kwargs):
         serializer = InfoSerializer({
-            'name': settings.PROJECT_NAME,
-            'version': settings.PROJECT_VERSION,
-            'support_email': settings.EMAIL_ADDRESS
+            "name": settings.PROJECT_NAME,
+            "version": settings.PROJECT_VERSION,
+            "support_email": settings.EMAIL_ADDRESS
         })
 
         return Response(serializer.data)

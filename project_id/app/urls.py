@@ -11,12 +11,12 @@ __version__ = "1.0.3"
 
 urlpatterns = [
     # URLs for auto-generated resources
-    url('admin/', admin_site.urls, name='admin'),
-    url('docs/', include_docs_urls(title='{%PROJECT_NAME%} API Documentation'), name='docs'),
+    url("admin/", admin_site.urls, name="admin"),
+    url("docs/", include_docs_urls(title="{%PROJECT_NAME%} API Documentation"), name="docs"),
 
     ##############################
     # Unauthenticated URLs
     ##############################
-    url('status/', StatusResourceView.as_view({'get': 'status'}), name='resource_status'),
-    url('info/', InfoResourceView.as_view({'get': 'info'}), name='resource_info'),
+    url("status/", StatusResourceView.as_view({"get": "status"}), name="resource_status"),
+    url("info/", InfoResourceView.as_view({"get": "info"}), name="resource_info"),
 ]
