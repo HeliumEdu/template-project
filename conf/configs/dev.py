@@ -81,7 +81,7 @@ warnings.filterwarnings("error", r"DateTimeField .* received a naive datetime", 
 if os.environ.get("USE_IN_MEMORY_DB", "True") == "True":
     CACHES = {
         "default": {
-            "BACKEND": "{%PROJECT_ID%}.app.cache.locmemkeys.LocMemKeysCache",
+            "BACKEND": "{%PROJECT_ID_LOWER%}.app.cache.locmemkeys.LocMemKeysCache",
             "LOCATION": "unique-snowflake",
         }
     }
