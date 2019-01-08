@@ -41,5 +41,5 @@ migrate: virtualenv
 test: virtualenv
 	( \
 		source $({%PROJECT_ID_UPPER%}_VENV)/bin/activate; \
-		python manage.py test; \
+		python -m coverage run --source='.' manage.py test && python -m coverage html; \
 	)
