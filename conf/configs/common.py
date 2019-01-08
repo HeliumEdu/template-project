@@ -52,8 +52,13 @@ INSTALLED_APPS = (
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.humanize",
+    # Health modules
+    'health_check',
+    'health_check.cache',
+    'health_check.db',
     # Third-party modules
     "pipeline",
+    'rest_framework',
     # Project modules
     "{%PROJECT_ID_LOWER%}.app",
 )

@@ -4,7 +4,7 @@ from django.conf import settings
 from rest_framework.response import Response
 from rest_framework.viewsets import ViewSet
 
-from helium.common.serializers.infoserializer import InfoSerializer
+from {%PROJECT_ID_LOWER%}.app.serializers.infoserializer import InfoSerializer
 
 __author__ = "Alex Laird"
 __copyright__ = "Copyright 2019, Helium Edu"
