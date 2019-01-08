@@ -8,8 +8,8 @@ omit =
     */schemas.py
     */tests/**
     */migrations/**
-    {%PROJECT_ID_LOWER%}/app/cache/locmemkeys.py
-    {%PROJECT_ID_LOWER%}/app/models/base.py
+    {%PROJECT_ID%}/app/cache/locmemkeys.py
+    {%PROJECT_ID%}/app/models/base.py
 
 [report]
 fail_under = 90
@@ -18,8 +18,7 @@ exclude_lines =
     pragma: no cover
     def __repr__
     if self\.debug
-    if settings.DEBUG
-    if settings.DISABLE_EMAILS
+    if settings\.DEBUG
     raise AssertionError
     raise NotImplementedError
     if 0:

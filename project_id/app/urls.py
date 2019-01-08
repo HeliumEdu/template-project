@@ -7,7 +7,7 @@ from {%PROJECT_ID_LOWER%}.app.views.apis.statusviews import StatusResourceView
 
 __author__ = "Alex Laird"
 __copyright__ = "Copyright 2019, Helium Edu"
-__version__ = "1.0.3"
+__version__ = "1.1.0"
 
 urlpatterns = [
     # URLs for auto-generated resources
