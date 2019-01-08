@@ -13,4 +13,4 @@ clean:
 test: clean
 	mkdir build
 	cd build && helium-cli init template-project-test-build "Template Project Test Build" test.com heliumedu
-	make -C build/template-project-test-build test
+	make -C build/template-project-test-build install test
