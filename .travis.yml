@@ -10,14 +10,3 @@ install:
  - python -m pip install -r requirements.txt
 script:
 - make install test
-deploy:
-  provider: codedeploy
-  revision_type: github
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
-  application: {%PROJECT_ID%}
-  deployment_group: demo
-  region: us-east-1
-  on:
-    tags: true
-    python: 3.6

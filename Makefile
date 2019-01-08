@@ -1,45 +1,16 @@
-.PHONY: all env virtualenv install build build-migrations migrate test
+.PHONY: all install clean test
 
 SHELL := /usr/bin/env bash
-{%PROJECT_ID_UPPER%}_VENV ?= .venv
 
-all: env virtualenv install build migrate test
+all: install clean test
 
-env:
-	cp -n .env.example .env | true
+install:
+	pip install heliumcli
 
-virtualenv:
-	if [ ! -d "$({%PROJECT_ID_UPPER%}_VENV)" ]; then \
-		python3 -m pip install virtualenv --user; \
-        python3 -m virtualenv $({%PROJECT_ID_UPPER%}_VENV); \
-	fi
+clean:
+	rm -rf build
 
-install: env virtualenv
-	( \
-		source $({%PROJECT_ID_UPPER%}_VENV)/bin/activate; \
-		python -m pip install -r requirements.txt; \
-	)
-
-build: virtualenv
-	( \
-		source $({%PROJECT_ID_UPPER%}_VENV)/bin/activate; \
-		python manage.py collectstatic --noinput; \
-	)
-
-build-migrations: env virtualenv install
-	( \
-		source $({%PROJECT_ID_UPPER%}_VENV)/bin/activate; \
-		python manage.py makemigrations; \
-	)
-
-migrate: virtualenv
-	( \
-		source $({%PROJECT_ID_UPPER%}_VENV)/bin/activate; \
-		python manage.py migrate; \
-	)
-
-test: virtualenv
-	( \
-		source $({%PROJECT_ID_UPPER%}_VENV)/bin/activate; \
-		python manage.py test; \
-	)
+test: clean
+	mkdir build
+	cd build && helium-cli init template-project-test-build "Template Project Test Build" test.com heliumedu
+	make -C build/template-project-test-build test
