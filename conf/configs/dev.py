@@ -10,7 +10,7 @@ from conf.configs import common
 
 __author__ = "Alex Laird"
 __copyright__ = "Copyright 2018, Helium Edu"
-__version__ = "1.1.0"
+__version__ = "1.1.1"
 
 # Define the base working directory of the application
 BASE_DIR = os.path.normpath(os.path.join(os.path.abspath(os.path.dirname(__file__)), "..", ".."))
@@ -30,6 +30,10 @@ TEMPLATES = common.TEMPLATES
 INTERNAL_IPS = (
     "127.0.0.1",
 )
+
+ALLOWED_HOSTS = common.ALLOWED_HOSTS + [
+    '.ngrok.io'
+]
 
 # Logging
 
@@ -109,3 +113,7 @@ else:
 
 common.PIPELINE["CSS_COMPRESSOR"] = None
 common.PIPELINE["JS_COMPRESSOR"] = None
+
+# Server
+
+USE_NGROK = os.environ.get('USE_NGROK', 'False') == 'True'

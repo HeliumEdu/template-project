@@ -5,7 +5,7 @@ SHELL := /usr/bin/env bash
 all: install clean test
 
 install:
-	python3 -m pip install heliumcli virtualenv
+	python3 -m pip install --upgrade heliumcli virtualenv
 
 clean:
 	rm -rf build
@@ -17,5 +17,6 @@ test: clean
 	( \
 		source build/template-project-test-build/.venv/bin/activate; \
 		python -m pip install -r build/template-project-test-build/requirements.txt; \
+		python -m pip install -r build/template-project-test-build/requirements-dev.txt; \
 	)
 	make -C build/template-project-test-build env test

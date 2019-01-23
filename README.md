@@ -18,7 +18,7 @@ This repository contains the source code for the {%PROJECT_NAME%} project.
 To setup the Python/Django build environment, execute:
 
 ```sh
-make install
+make install-dev
 ```
 
 To ensure the database is in sync with the latest schema, database migrations are generated and run with Django. To run migrations, execute:
@@ -40,3 +40,6 @@ python manage.py runserver
 ```
 
 A development server will be started at <http://localhost:8000>.
+
+If the `USE_NGROK` environment variable is set when a dev server is started (using `runserver`, [pyngrok](https://github.com/alexdlaird/pyngrok)
+will be used to open a `ngrok` tunnel. This is especially useful when using webhooks.
