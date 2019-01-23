@@ -1,4 +1,6 @@
+import os
 import sys
+
 from urllib.parse import urlparse
 
 from django.apps import AppConfig
