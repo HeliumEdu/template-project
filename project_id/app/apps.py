@@ -1,10 +1,7 @@
-import os
 import sys
-
-from urllib.parse import urlparse
-
 from django.apps import AppConfig
 from django.conf import settings
+from urllib.parse import urlparse
 
 __author__ = "Alex Laird"
 __copyright__ = "Copyright 2018, Helium Edu"
@@ -16,7 +13,7 @@ class CommonConfig(AppConfig):
     verbose_name = "App"
 
     def ready(self):
-        if os.environ.get('RUN_MAIN', None) and settings.DEV_SERVER and settings.USE_NGROK:
+        if settings.DEV_SERVER and settings.USE_NGROK:
             # pyngrok will only be installed, and should only ever be initialized, in a dev environment
             from pyngrok import ngrok
 
