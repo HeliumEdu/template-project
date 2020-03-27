@@ -5,7 +5,7 @@ from urllib.parse import urlparse
 
 __author__ = "Alex Laird"
 __copyright__ = "Copyright 2018, Helium Edu"
-__version__ = "1.1.1"
+__version__ = "1.1.7"
 
 
 class CommonConfig(AppConfig):
