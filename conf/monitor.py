@@ -25,7 +25,7 @@ _lock = threading.Lock()
 def _restart(path):
     _queue.put(True)
     prefix = "monitor (pid=%d):" % os.getpid()
-    print(f"{prefix} Change detected to \"{path}\"")
+    print(f"{prefix} Change detected to \"{path}\".")
     print(f"{prefix} Triggering process restart.")
     os.kill(os.getpid(), signal.SIGINT)
 
