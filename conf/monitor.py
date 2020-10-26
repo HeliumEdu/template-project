@@ -11,7 +11,7 @@ import threading
 
 __author__ = "Alex Laird"
 __copyright__ = "Copyright 2018, Helium Edu"
-__version__ = "1.0.2"
+__version__ = "1.1.15"
 
 _interval = 1.0
 _times = {}

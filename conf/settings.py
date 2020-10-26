@@ -16,7 +16,7 @@ from builtins import str
 
 __author__ = "Alex Laird"
 __copyright__ = "Copyright 2018, Helium Edu"
-__version__ = "1.0.2"
+__version__ = "1.1.15"
 
 # Are we running on the dev server
 DEV_SERVER = False
