@@ -105,7 +105,7 @@ USE_TZ = True
 # DateTime sanity
 
 NORMALIZED_DATE_FORMAT = "%a, %b %d"
-NORMALIZED_DATE_TIME_FORMAT = "{} at %I:%M %p".format(NORMALIZED_DATE_FORMAT)
+NORMALIZED_DATE_TIME_FORMAT = f"{NORMALIZED_DATE_FORMAT} at %I:%M %p"
 
 # Email settings
 
@@ -114,7 +114,7 @@ SERVER_EMAIL = ADMIN_EMAIL_ADDRESS
 EMAIL_USE_TLS = os.environ.get("{%PROJECT_ID_UPPER%}_EMAIL_USE_TLS", "True") == "True"
 EMAIL_PORT = os.environ.get("{%PROJECT_ID_UPPER%}_EMAIL_PORT")
 EMAIL_ADDRESS = os.environ.get("{%PROJECT_ID_UPPER%}_CONTACT_EMAIL")
-DEFAULT_FROM_EMAIL = "{} <{}>".format(PROJECT_NAME, EMAIL_ADDRESS)
+DEFAULT_FROM_EMAIL = f"{PROJECT_NAME} <{EMAIL_ADDRESS}>"
 EMAIL_HOST = os.environ.get("{%PROJECT_ID_UPPER%}_EMAIL_HOST")
 
 EMAIL_HOST_USER = os.environ.get("{%PROJECT_ID_UPPER%}_EMAIL_HOST_USER")
@@ -158,7 +158,7 @@ PIPELINE = {
             "source_filenames": (
                 "css/error.css",
             ),
-            "output_filename": "css/{}_error_{}.min.css".format(PROJECT_ID, PROJECT_VERSION),
+            "output_filename": f"css/{PROJECT_ID}_error_{PROJECT_VERSION}.min.css",
         },
     },
 }

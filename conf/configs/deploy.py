@@ -75,15 +75,15 @@ LOGGING = {
         "django": {
             "level": "ERROR",
             "class": "logging.handlers.RotatingFileHandler",
-            "filename": "/var/log/{}/django.log".format(PROJECT_ID),
+            "filename": f"/var/log/{PROJECT_ID}/django.log",
             "maxBytes": 50000000,
             "backupCount": 3,
             "formatter": "standard",
         },
-        "{}_app".format(PROJECT_ID): {
+        f"{PROJECT_ID}_app": {
             "level": "INFO",
             "class": "logging.handlers.RotatingFileHandler",
-            "filename": "/var/log/{}/app.log".format(PROJECT_ID),
+            "filename": f"/var/log/{PROJECT_ID}/app.log",
             "maxBytes": 50000000,
             "backupCount": 3,
             "formatter": "standard",
@@ -96,7 +96,7 @@ LOGGING = {
             "propagate": False,
         },
         "{%PROJECT_ID_LOWER%}.app": {
-            "handlers": ["{}_app".format(PROJECT_ID), "rollbar"],
+            "handlers": [f"{PROJECT_ID}_app", "rollbar"],
             "level": "INFO",
         },
     }
