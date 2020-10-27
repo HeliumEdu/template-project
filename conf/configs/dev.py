@@ -5,8 +5,8 @@ Settings specific to a development environment using Django's `runserver` comman
 import os
 import warnings
 
-from conf.settings import PROJECT_ID
 from conf.configs import common
+from conf.settings import PROJECT_ID
 
 __author__ = "Alex Laird"
 __copyright__ = "Copyright 2018, Helium Edu"
@@ -32,7 +32,7 @@ INTERNAL_IPS = (
 )
 
 ALLOWED_HOSTS = common.ALLOWED_HOSTS + [
-    '.ngrok.io'
+    ".ngrok.io"
 ]
 
 # Logging
@@ -116,4 +116,4 @@ common.PIPELINE["JS_COMPRESSOR"] = None
 
 # Server
 
-USE_NGROK = os.environ.get('USE_NGROK', 'False') == 'True' and os.environ.get('RUN_MAIN', None) != 'true'
+USE_NGROK = os.environ.get("USE_NGROK", "False") == "True" and os.environ.get("RUN_MAIN", None) != "true"
