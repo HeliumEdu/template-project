@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/{%PROJECT_GITHUB_USER%}/{%PROJECT_ID%}.svg?branch=master)](https://travis-ci.org/{%PROJECT_GITHUB_USER%}/{%PROJECT_ID%})
+[![Build Status](https://travis-ci.com/{%PROJECT_GITHUB_USER%}/{%PROJECT_ID%}.svg?branch=master)](https://travis-ci.com/{%PROJECT_GITHUB_USER%}/{%PROJECT_ID%})
 ![GitHub](https://img.shields.io/github/license/{%PROJECT_GITHUB_USER%}/{%PROJECT_ID%})
 
 # {%PROJECT_NAME%}
