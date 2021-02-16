@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.com/{%PROJECT_GITHUB_USER%}/{%PROJECT_ID%}.svg?branch=master)](https://travis-ci.com/{%PROJECT_GITHUB_USER%}/{%PROJECT_ID%})
-![GitHub](https://img.shields.io/github/license/{%PROJECT_GITHUB_USER%}/{%PROJECT_ID%})
+[![CI/CD](https://github.com/{%PROJECT_GITHUB_USER%}/{%PROJECT_ID%}/workflows/CI/CD/badge.svg)](https://github.com/{%PROJECT_GITHUB_USER%}/{%PROJECT_ID%}/actions?query=workflow%3ACI%2FCD)
+![GitHub License](https://img.shields.io/github/license/{%PROJECT_GITHUB_USER%}/{%PROJECT_ID%})
 
 # {%PROJECT_NAME%}
 
