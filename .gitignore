@@ -3,10 +3,12 @@
 .idea/
 *.iml
 build
+_build
 src
 *.retry
 db.sqlite3
 db.sqlite3-journal
+.coverage
 *.log
 .env
 .venv
