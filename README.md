@@ -24,13 +24,13 @@ make install-dev
 To ensure the database is in sync with the latest schema, database migrations are generated and run with Django. To run migrations, execute:
 
 ```sh
-make migrate
+ENVIRONMENT=dev make migrate
 ```
 
 Once migrations have been run, you can create a super user, which is a standard user that also has access to the /admin site.
 
 ```sh
-python manage.py createsuperuser
+ENVIRONMENT=dev python manage.py createsuperuser
 ```
 
 Now you're all set! To start the development server, execute:
@@ -39,7 +39,9 @@ Now you're all set! To start the development server, execute:
 python manage.py runserver
 ```
 
-A development server will be started at <http://localhost:8000>.
+A development server will be started at <http://localhost:8000>, though there is no mounted root URL—visit
+<http://localhost:8000/admin> or <http://localhost:8000/info> to see the project serve a request.
 
-If the `USE_NGROK` environment variable is set when a dev server is started (using `runserver`, [pyngrok](https://github.com/alexdlaird/pyngrok)
-will be used to open a `ngrok` tunnel. This is especially useful when using webhooks.
+If the `USE_NGROK` environment variable is set when a dev server is started (using `runserver`),
+[pyngrok](https://github.com/alexdlaird/pyngrok) will be used to open a `ngrok` tunnel. This is especially useful when
+using webhooks.
