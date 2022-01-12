@@ -2,7 +2,7 @@ mock==4.0.3
 coverage==6.2
 django==4.0.1
 djangorestframework==3.13.1
-django-pipeline==2.0.7
+django-pipeline==2.0.8
 django-dotenv==1.4.2
 django-redis==5.2.0
 coreapi==2.3.3
