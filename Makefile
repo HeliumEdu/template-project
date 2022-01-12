@@ -12,7 +12,7 @@ clean:
 
 test: clean
 	mkdir build
-	cd build && HELIUMCLI_TEMPLATE_PROJECT_VERSION=master helium-cli init template-project-test-build "Template Project Test Build" test.com heliumedu
+	cd build && HELIUMCLI_TEMPLATE_PROJECT_VERSION=main helium-cli init template-project-test-build "Template Project Test Build" test.com heliumedu
 	python3 -m virtualenv build/template-project-test-build/.venv
 	( \
 		source build/template-project-test-build/.venv/bin/activate; \
