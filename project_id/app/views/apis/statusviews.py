@@ -3,7 +3,7 @@ import sys
 from concurrent.futures import ThreadPoolExecutor
 
 from django.http import JsonResponse
-from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import gettext_lazy as _
 from django.views.decorators.cache import never_cache
 from health_check.plugins import plugin_dir
 from rest_framework import status
