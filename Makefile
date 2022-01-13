@@ -20,3 +20,4 @@ test: clean
 		python -m pip install -r build/template-project-test-build/requirements-dev.txt; \
 	)
 	make -C build/template-project-test-build env test
+	
