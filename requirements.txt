@@ -1,5 +1,5 @@
 mock==4.0.3
-coverage==6.2
+coverage==6.4.4
 django==4.0.4
 djangorestframework==3.13.1
 django-pipeline==2.0.8
