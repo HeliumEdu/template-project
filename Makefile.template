@@ -1,6 +1,7 @@
 .PHONY: all env virtualenv install install-dev build build-migrations migrate test
 
 SHELL := /usr/bin/env bash
+PYTHON_BIN ?= python
 {%PROJECT_ID_UPPER%}_VENV ?= .venv
 
 all: env virtualenv install build migrate test
@@ -10,8 +11,8 @@ env:
 
 virtualenv:
 	if [ ! -d "$({%PROJECT_ID_UPPER%}_VENV)" ]; then \
-		python3 -m pip install virtualenv --user; \
-        python3 -m virtualenv $({%PROJECT_ID_UPPER%}_VENV); \
+		$(PYTHON_BIN) -m pip install virtualenv --user; \
+        $(PYTHON_BIN) -m virtualenv $({%PROJECT_ID_UPPER%}_VENV); \
 	fi
 
 install: env virtualenv
