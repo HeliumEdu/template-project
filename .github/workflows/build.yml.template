@@ -1,10 +1,12 @@
-name: "CI/CD"
+name: "Build"
+
+run-name: "Build ${{ github.ref_name }}"
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main, develop ]
   pull_request:
-    branches: [ master ]
+    branches: [ main, develop ]
 
 
 jobs:
@@ -14,9 +16,17 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        python-version: [ 3.6, 3.7, 3.8, 3.9 ]
+        os: [ ubuntu-latest, macos-latest ]
+        python-version: [ "3.11" ]
+        include:
+          - python-version: "3.8"
+            os: ubuntu-latest
+          - python-version: "3.9"
+            os: ubuntu-latest
+          - python-version: "3.10"
+            os: ubuntu-latest
 
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
 
     steps:
       - uses: actions/checkout@v2
@@ -28,10 +38,15 @@ jobs:
         run:
           make install
       - name: Run tests
-        run:
-          make test
+        run: |
+          if [ "$RUNNER_OS" == "Windows" ]; then
+            coverage run -m unittest discover -b;
+          else
+            make test local
+          fi
+        shell: bash
       - name: Upload coverage
-        if: matrix.python-version == '3.9'
-        uses: codecov/codecov-action@v1
+        if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11'
+        uses: codecov/codecov-action@v3
         with:
           directory: ./_build/coverage
