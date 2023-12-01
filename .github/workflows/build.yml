@@ -20,7 +20,7 @@ jobs:
         python-version: [ "3.9", "3.11" ]
         include:
           - python-version: "3.6"
-            os: ubuntu-latest
+            os: ubuntu-20.04
 
     runs-on: ${{ matrix.os }}
 
