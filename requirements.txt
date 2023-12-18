@@ -4,7 +4,7 @@ django-pipeline==2.0.9
 django-dotenv==1.4.2
 django-redis==5.4.0
 coreapi==2.3.3
-mysqlclient==2.2.0
+mysqlclient==2.2.1
 pytz==2023.3
 python-dateutil==2.8.2
 schedule==1.2.1
