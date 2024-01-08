@@ -32,8 +32,11 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
         run: make install
+      - name: Get version
+        id: get_version
+        run: echo ::set-output name=BRANCH::${GITHUB_REF#refs/heads/}
       - name: Test
-        run: make test
+        run: BRANCH=${{ steps.get_version.outputs.BRANCH }} make test
 
   automerge:
     name: "Auto Approve"
