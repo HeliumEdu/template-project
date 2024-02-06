@@ -18,7 +18,6 @@ test: clean
 	$(PYTHON_BIN) -m virtualenv build/template-project-test-build/.venv
 	( \
 		source build/template-project-test-build/.venv/bin/activate; \
-		python -m pip install -r build/template-project-test-build/requirements.txt; \
-		python -m pip install -r build/template-project-test-build/requirements-dev.txt; \
+		python -m pip install -r build/template-project-test-build/requirements.txt -r build/template-project-test-build/requirements-dev.txt; \
 	)
 	make -C build/template-project-test-build env test

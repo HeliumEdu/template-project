@@ -1,4 +1,4 @@
-.PHONY: all env virtualenv install install-dev nopyc clean build build-migrations migrate test
+.PHONY: all env virtualenv install nopyc clean build build-migrations migrate test
 
 SHELL := /usr/bin/env bash
 PYTHON_BIN ?= python
@@ -18,13 +18,7 @@ virtualenv:
 install: env virtualenv
 	( \
 		source $({%PROJECT_ID_UPPER%}_VENV)/bin/activate; \
-		python -m pip install -r requirements.txt; \
-	)
-
-install-dev: install
-	( \
-		source $({%PROJECT_ID_UPPER%}_VENV)/bin/activate; \
-		python -m pip install -r requirements-dev.txt; \
+		python -m pip install -r requirements.txt -r requirements-dev.txt; \
 	)
 
 nopyc:
