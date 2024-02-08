@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-{%PROJECT_ID_UPPER%}_VENV=${{%PROJECT_ID_UPPER%}_VENV:=${DIR}/../.venv}
+{%PROJECT_ID_UPPER%}_VENV=${{%PROJECT_ID_UPPER%}_VENV:=${DIR}/../venv}
 
 make install migrate -C ${DIR}/..
 

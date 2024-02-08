@@ -1,7 +1,7 @@
 [run]
 branch = True
 omit =
-    .venv/**
+    venv/**
     conf/**
     */admin.py
     */apps.py
@@ -25,4 +25,4 @@ exclude_lines =
     if __name__ == .__main__.:
 
 [html]
-title = {%PROJECT_NAME%} Report
+title = {%PROJECT_NAME%} Coverage Report

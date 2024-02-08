@@ -15,9 +15,9 @@ clean:
 test: clean
 	mkdir build
 	cd build && HELIUMCLI_TEMPLATE_PROJECT_VERSION=$(BRANCH) helium-cli init template-project-test-build "Template Project Test Build" test.com heliumedu
-	$(PYTHON_BIN) -m virtualenv build/template-project-test-build/.venv
+	$(PYTHON_BIN) -m virtualenv build/template-project-test-build/venv
 	( \
-		source build/template-project-test-build/.venv/bin/activate; \
+		source build/template-project-test-build/venv/bin/activate; \
 		python -m pip install -r build/template-project-test-build/requirements.txt -r build/template-project-test-build/requirements-dev.txt; \
 	)
 	make -C build/template-project-test-build env test

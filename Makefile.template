@@ -2,7 +2,7 @@
 
 SHELL := /usr/bin/env bash
 PYTHON_BIN ?= python
-{%PROJECT_ID_UPPER%}_VENV ?= .venv
+{%PROJECT_ID_UPPER%}_VENV ?= venv
 
 all: env virtualenv install build migrate test
 
