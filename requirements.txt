@@ -9,4 +9,3 @@ pytz==2024.1
 python-dateutil==2.8.2
 schedule==1.2.1
 -e git+https://github.com/alexdlaird/django-health-check.git@alaird-4.0.1#egg=django-health-check
-
