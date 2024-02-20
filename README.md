@@ -1,5 +1,5 @@
-[![Build](https://github.com/{%PROJECT_GITHUB_USER%}/{%PROJECT_ID%}/actions/workflows/build.yml/badge.svg)](https://github.com/{%PROJECT_GITHUB_USER%}/{%PROJECT_ID%}/actions/workflows/build.yml)
 ![Python Versions](https://img.shields.io/badge/python-%203.8%20|%203.9%20|%203.10%20|%203.11%20-blue)
+[![Build](https://img.shields.io/github/actions/workflow/status/{%PROJECT_GITHUB_USER%}/{%PROJECT_ID%}/build.yml)](https://github.com/{%PROJECT_GITHUB_USER%}/{%PROJECT_ID%}/actions/workflows/build.yml)
 ![GitHub License](https://img.shields.io/github/license/{%PROJECT_GITHUB_USER%}/{%PROJECT_ID%})
 
 # {%PROJECT_NAME%}
