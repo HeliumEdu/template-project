@@ -4,10 +4,6 @@
 
 # {%PROJECT_NAME%}
 
-## Prerequisites
-
-- Python (>= 3.8)
-
 ## Getting Started
 The project is developed using Python and [Django](https://www.djangoproject.com).
 
@@ -17,25 +13,43 @@ This repository contains the source code for the {%PROJECT_NAME%} project.
 To setup the Python/Django build environment, execute:
 
 ```sh
-make install-dev
+make install
 ```
+
+This project is configured to work with a Virtualenv which has now been setup in the `.venv` folder. If you're
+unfamiliar with how this works, [read up on Virtualenv here](https://virtualenv.pypa.io/en/stable). The short version
+is, virtualenv creates isolated environments for each project's dependencies. To activate and use this environment when
+developing, execute:
+
+```sh
+source .venv/bin/activate
+```
+
+All commands below will now be run within the virtualenv (though `make` commands will always automatically enter the
+virtualenv before executing).
 
 To ensure the database is in sync with the latest schema, database migrations are generated and run with Django. To run migrations, execute:
 
 ```sh
-ENVIRONMENT=dev make migrate
+make migrate
 ```
 
 Once migrations have been run, you can create a super user, which is a standard user that also has access to the /admin site.
 
 ```sh
-ENVIRONMENT=dev python manage.py createsuperuser
+python manage.py createsuperuser
+```
+
+Before commits are made, be sure to run tests and check the generated coverage report.
+
+```sh
+make test
 ```
 
 Now you're all set! To start the development server, execute:
 
 ```sh
-python manage.py runserver
+bin/runserver
 ```
 
 A development server will be started at <http://localhost:8000>, though there is no mounted root URL—visit
