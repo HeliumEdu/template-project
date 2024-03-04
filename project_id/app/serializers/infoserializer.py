@@ -1,10 +1,9 @@
+__copyright__ = "Copyright (c) 2024 Helium Edu"
+__license__ = "MIT"
+
 import logging
 
 from rest_framework import serializers
-
-__author__ = "Alex Laird"
-__copyright__ = "Copyright 2019, Helium Edu"
-__version__ = "1.1.0"
 
 logger = logging.getLogger(__name__)
 

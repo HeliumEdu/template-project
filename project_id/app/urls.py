@@ -1,13 +1,12 @@
+__copyright__ = "Copyright (c) 2024 Helium Edu"
+__license__ = "MIT"
+
 from django.urls import re_path
 from rest_framework.documentation import include_docs_urls
 
 from {%PROJECT_ID_LOWER%}.app.admin import admin_site
 from {%PROJECT_ID_LOWER%}.app.views.apis.infoviews import InfoResourceView
 from {%PROJECT_ID_LOWER%}.app.views.apis.statusviews import StatusResourceView
-
-__author__ = "Alex Laird"
-__copyright__ = "Copyright 2019, Helium Edu"
-__version__ = "1.3.0"
 
 urlpatterns = [
     # URLs for auto-generated resources

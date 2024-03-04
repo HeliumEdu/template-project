@@ -1,10 +1,9 @@
+__copyright__ = "Copyright (c) 2024 Helium Edu"
+__license__ = "MIT"
+
 import logging
 
 from django.db import models
-
-__author__ = "Alex Laird"
-__copyright__ = "Copyright 2018, Helium Edu"
-__version__ = "1.0.2"
 
 logger = logging.getLogger(__name__)
 

@@ -1,3 +1,6 @@
+__copyright__ = "Copyright (c) 2024 Helium Edu"
+__license__ = "MIT"
+
 import json
 
 from unittest import mock
@@ -6,10 +9,6 @@ from django.db import IntegrityError
 from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
-
-__author__ = "Alex Laird"
-__copyright__ = "Copyright 2019, Helium Edu"
-__version__ = "1.1.0"
 
 
 class TestCaseStatusViews(APITestCase):

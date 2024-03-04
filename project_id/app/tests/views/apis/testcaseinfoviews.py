@@ -1,11 +1,10 @@
+__copyright__ = "Copyright (c) 2024 Helium Edu"
+__license__ = "MIT"
+
 from django.conf import settings
 from django.urls import reverse
 from rest_framework import status
 from rest_framework.test import APITestCase
-
-__author__ = "Alex Laird"
-__copyright__ = "Copyright 2019, Helium Edu"
-__version__ = "1.1.0"
 
 
 class TestCaseInfoViews(APITestCase):

@@ -2,15 +2,14 @@
 Settings specific to a development environment using Django's `runserver` command, reading values from `.env`.
 """
 
+__copyright__ = "Copyright (c) 2024 Helium Edu"
+__license__ = "MIT"
+
 import os
 import warnings
 
 from conf.configs import common
 from conf.settings import PROJECT_ID
-
-__author__ = "Alex Laird"
-__copyright__ = "Copyright 2018, Helium Edu"
-__version__ = "1.1.7"
 
 # Define the base working directory of the application
 BASE_DIR = os.path.normpath(os.path.join(os.path.abspath(os.path.dirname(__file__)), "..", ".."))

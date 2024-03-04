@@ -2,16 +2,15 @@
 Restart the WSGI daemon process in development when files have changed.
 """
 
+__copyright__ = "Copyright (c) 2024 Helium Edu"
+__license__ = "MIT"
+
 import atexit
 import os
 import queue
 import signal
 import sys
 import threading
-
-__author__ = "Alex Laird"
-__copyright__ = "Copyright 2018, Helium Edu"
-__version__ = "1.1.15"
 
 _interval = 1.0
 _times = {}

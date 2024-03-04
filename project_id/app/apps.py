@@ -1,11 +1,10 @@
+__copyright__ = "Copyright (c) 2024 Helium Edu"
+__license__ = "MIT"
+
 import sys
 from django.apps import AppConfig
 from django.conf import settings
 from urllib.parse import urlparse
-
-__author__ = "Alex Laird"
-__copyright__ = "Copyright 2018, Helium Edu"
-__version__ = "1.1.15"
 
 
 class CommonConfig(AppConfig):

@@ -2,14 +2,13 @@
 Settings specific to running tests, reading values from `.env`.
 """
 
+__copyright__ = "Copyright (c) 2024 Helium Edu"
+__license__ = "MIT"
+
 import logging
 import os
 
 from conf.configs import common
-
-__author__ = "Alex Laird"
-__copyright__ = "Copyright 2018, Helium Edu"
-__version__ = "1.0.2"
 
 # Define the base working directory of the application
 BASE_DIR = os.path.normpath(os.path.join(os.path.abspath(os.path.dirname(__file__)), "..", ".."))

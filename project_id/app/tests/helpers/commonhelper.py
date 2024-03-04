@@ -1,8 +1,7 @@
-from unittest import mock
+__copyright__ = "Copyright (c) 2024 Helium Edu"
+__license__ = "MIT"
 
-__author__ = "Alex Laird"
-__copyright__ = "Copyright 2019, Helium Edu"
-__version__ = "1.1.0"
+from unittest import mock
 
 
 def given_urlopen_response_value(status, mock_urlopen):

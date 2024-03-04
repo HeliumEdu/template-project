@@ -1,3 +1,6 @@
+__copyright__ = "Copyright (c) 2024 Helium Edu"
+__license__ = "MIT"
+
 import copy
 import sys
 from concurrent.futures import ThreadPoolExecutor
@@ -9,10 +12,6 @@ from django.views.decorators.cache import never_cache
 from health_check.plugins import plugin_dir
 from rest_framework import status
 from rest_framework.viewsets import ViewSet
-
-__author__ = "Alex Laird"
-__copyright__ = "Copyright 2019, Helium Edu"
-__version__ = "1.3.0"
 
 
 def _run_checks(plugins):

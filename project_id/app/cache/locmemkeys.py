@@ -1,10 +1,9 @@
+__copyright__ = "Copyright (c) 2024 Helium Edu"
+__license__ = "MIT"
+
 import re
 
 from django.core.cache.backends.locmem import LocMemCache
-
-__author__ = "Alex Laird"
-__copyright__ = "Copyright 2018, Helium Edu"
-__version__ = "1.1.0"
 
 
 class LocMemKeysCache(LocMemCache):
