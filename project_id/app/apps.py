@@ -1,6 +1,7 @@
 __copyright__ = "Copyright (c) 2024 Helium Edu"
 __license__ = "MIT"
 
+import os
 import sys
 from django.apps import AppConfig
 from django.conf import settings
@@ -12,7 +13,7 @@ class CommonConfig(AppConfig):
     verbose_name = "App"
 
     def ready(self):
-        if settings.DEV_SERVER and settings.USE_NGROK:
+        if settings.USE_NGROK and os.environ.get("NGROK_AUTHTOKEN"):
             # pyngrok will only be installed, and should only ever be initialized, in a dev environment
             from pyngrok import ngrok
 
