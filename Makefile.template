@@ -49,6 +49,5 @@ migrate: install
 test: install
 	( \
 		source $({%PROJECT_ID_UPPER%}_VENV)/bin/activate; \
-		coverage run manage.py test; \
-		coverage report && coverage html && coverage xml; \
+		coverage run manage.py test && coverage report && coverage html && coverage xml; \
 	)
