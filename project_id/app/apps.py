@@ -11,6 +11,7 @@ from urllib.parse import urlparse
 class CommonConfig(AppConfig):
     name = "{%PROJECT_ID_LOWER%}.app"
     verbose_name = "App"
+    default_auto_field = "django.db.models.BigAutoField"
 
     def ready(self):
         if settings.USE_NGROK and os.environ.get("NGROK_AUTHTOKEN"):

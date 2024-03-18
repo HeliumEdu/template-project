@@ -8,4 +8,4 @@ mysqlclient==2.2.4
 pytz==2024.1
 python-dateutil==2.9.0.post0
 schedule==1.2.1
--e git+https://github.com/alexdlaird/django-health-check.git@alaird-4.0.1#egg=django-health-check
+-e git+https://github.com/alexdlaird/django-health-check.git@4.0.2#egg=django-health-check
