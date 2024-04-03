@@ -22,11 +22,11 @@ jobs:
         run: make install
       - name: Test
         run: make test
-      - uses: aws-actions/configure-aws-credentials@v1
+      - uses: aws-actions/configure-aws-credentials@v4
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_KEY }}
           aws-region: us-east-1
       - uses: actions/checkout@v2
       - id: deploy
-        uses: webfactory/create-aws-codedeploy-deployment@v0.2.2
+        uses: webfactory/create-aws-codedeploy-deployment@v0.4
