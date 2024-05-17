@@ -34,18 +34,3 @@ jobs:
         run: echo ::set-output name=BRANCH::${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}
       - name: Test
         run: BRANCH=${{ steps.get_version.outputs.BRANCH }} make test
-
-  automerge:
-    name: "Auto Approve"
-    needs: build
-    runs-on: ubuntu-latest
-
-    permissions:
-      pull-requests: write
-      contents: write
-
-    steps:
-      - uses: fastify/github-action-merge-dependabot@v3
-        with:
-          target: major
-          use-github-auto-merge: true
