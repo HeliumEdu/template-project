@@ -1,4 +1,5 @@
 ![Python Versions](https://img.shields.io/badge/python-%203.8%20|%203.9%20|%203.10%20|%203.11%20-blue)
+[![Coverage](https://img.shields.io/codecov/c/github/HeliumEdu/template-project)](https://codecov.io/gh/HeliumEdu/template-project)
 [![Build](https://img.shields.io/github/actions/workflow/status/HeliumEdu/template-project/build.yml)](https://github.com/HeliumEdu/template-project/actions/workflows/build.yml)
 ![GitHub License](https://img.shields.io/github/license/HeliumEdu/template-project)
 
@@ -8,7 +9,12 @@
 
 The project is developed using Python and [Django](https://www.djangoproject.com).
 
-This repository contains the source code for the HeliumEdu `template-project`.
+This repository contains the source code for the HeliumEdu `template-project`, which can be initialized using
+[`helium-cli`](https://github.com/HeliumEdu/heliumcli) with:
+
+```
+helium-cli init <project_id> <Project Name> <hostname> <githuber_username>
+```
 
 ### Project Setup
 
@@ -18,13 +24,13 @@ To setup the Python/Django build environment, execute:
 make install
 ```
 
-This project is configured to work with a Virtualenv which has now been setup in the `.venv` folder. If you're
+This project is configured to work with a Virtualenv which has now been setup in the `venv` folder. If you're
 unfamiliar with how this works, [read up on Virtualenv here](https://virtualenv.pypa.io/en/stable). The short version
 is, virtualenv creates isolated environments for each project's dependencies. To activate and use this environment when
 developing, execute:
 
 ```sh
-source .venv/bin/activate
+source venv/bin/activate
 ```
 
 All commands below will now be run within the virtualenv (though `make` commands will always automatically enter the
