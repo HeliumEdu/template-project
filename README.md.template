@@ -1,14 +1,14 @@
 ![Python Versions](https://img.shields.io/badge/python-%203.8%20|%203.9%20|%203.10%20|%203.11%20-blue)
-[![Build](https://img.shields.io/github/actions/workflow/status/HeliumEdu/template-project/build.yml)](https://github.com/HeliumEdu/template-project/actions/workflows/build.yml)
-![GitHub License](https://img.shields.io/github/license/HeliumEdu/template-project)
+[![Build](https://img.shields.io/github/actions/workflow/status/{%PROJECT_GITHUB_USER%}/{%PROJECT_ID%}/build.yml)](https://github.com/{%PROJECT_GITHUB_USER%}/{%PROJECT_ID%}/actions/workflows/build.yml)
+![GitHub License](https://img.shields.io/github/license/{%PROJECT_GITHUB_USER%}/{%PROJECT_ID%})
 
-# template-project
+# {%PROJECT_NAME%}
 
 ## Getting Started
 
 The project is developed using Python and [Django](https://www.djangoproject.com).
 
-This repository contains the source code for the HeliumEdu `template-project`.
+This repository contains the source code for the {%PROJECT_NAME%} project.
 
 ### Project Setup
 
