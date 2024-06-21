@@ -126,6 +126,7 @@ SECRET_KEY = os.environ.get("{%PROJECT_ID_UPPER%}_SECRET_KEY")
 CSRF_COOKIE_SECURE = os.environ.get("{%PROJECT_ID_UPPER%}_CSRF_COOKIE_SECURE", "True") == "True"
 SESSION_COOKIE_SECURE = os.environ.get("{%PROJECT_ID_UPPER%}_SESSION_COOKIE_SECURE", "True") == "True"
 ALLOWED_HOSTS = os.environ.get("{%PROJECT_ID_UPPER%}_ALLOWED_HOSTS", "").split(" ")
+CSRF_TRUSTED_ORIGINS = [PROJECT_HOST]
 
 # Logging
 
