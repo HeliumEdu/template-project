@@ -2,7 +2,7 @@ __copyright__ = "Copyright (c) 2024 Helium Edu"
 __license__ = "MIT"
 
 from django.urls import re_path
-from rest_framework.documentation import include_docs_urls
+from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
 
 from {%PROJECT_ID_LOWER%}.app.admin import admin_site
 from {%PROJECT_ID_LOWER%}.app.views.apis.infoviews import InfoResourceView
@@ -11,7 +11,7 @@ from {%PROJECT_ID_LOWER%}.app.views.apis.statusviews import StatusResourceView
 urlpatterns = [
     # URLs for auto-generated resources
     re_path("admin/", admin_site.urls, name="admin"),
-    re_path("docs/", include_docs_urls(title="{%PROJECT_NAME%} API Documentation"), name="docs"),
+    re_path("docs/", SpectacularRedocView.as_view(url_name='schema'), name='docs'),
 
     ##############################
     # Unauthenticated URLs

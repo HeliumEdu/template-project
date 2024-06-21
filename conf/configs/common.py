@@ -93,6 +93,12 @@ WSGI_APPLICATION = "conf.wsgi.application"
 
 HOSTNAME = socket.gethostname()
 
+# API configuration
+
+REST_FRAMEWORK = {
+    "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+}
+
 # Internationalization
 
 LANGUAGE_CODE = "en-us"
