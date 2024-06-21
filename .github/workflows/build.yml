@@ -34,18 +34,9 @@ jobs:
         run: echo ::set-output name=BRANCH::${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}
       - name: Test
         run: BRANCH=${{ steps.get_version.outputs.BRANCH }} make test
-
-  automerge:
-    name: "Auto Approve"
-    needs: build
-    runs-on: ubuntu-latest
-
-    permissions:
-      pull-requests: write
-      contents: write
-
-    steps:
-      - uses: fastify/github-action-merge-dependabot@v3
+      - name: Upload coverage
+        if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11'
+        uses: codecov/codecov-action@v4
         with:
-          target: major
-          use-github-auto-merge: true
+          token: ${{ secrets.CODECOV_TOKEN }}
+          directory: ./build/template-project-test-build/build/coverage
