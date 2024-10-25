@@ -1,21 +1,19 @@
-.PHONY: all env virtualenv install nopyc clean build build-migrations migrate test
+.PHONY: all env install nopyc clean build build-migrations migrate test
 
 SHELL := /usr/bin/env bash
 PYTHON_BIN ?= python
 {%PROJECT_ID_UPPER%}_VENV ?= venv
 
-all: env virtualenv install build migrate test
+all: build migrate test
 
 env:
 	cp -n .env.example .env | true
 
-virtualenv:
-	if [ ! -d "$({%PROJECT_ID_UPPER%}_VENV)" ]; then \
-		$(PYTHON_BIN) -m pip install virtualenv --user; \
-        $(PYTHON_BIN) -m virtualenv $({%PROJECT_ID_UPPER%}_VENV); \
-	fi
+venv:
+    $(PYTHON_BIN) -m pip install virtualenv --user
+    $(PYTHON_BIN) -m virtualenv $({%PROJECT_ID_UPPER%}_VENV)
 
-install: env virtualenv
+install: env venv
 	( \
 		source $({%PROJECT_ID_UPPER%}_VENV)/bin/activate; \
 		python -m pip install -r requirements.txt -r requirements-dev.txt; \
