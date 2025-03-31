@@ -4,7 +4,7 @@ django-pipeline==3.1.0
 django-dotenv==1.4.2
 django-redis==5.4.0
 mysqlclient==2.2.7
-pytz==2025.1
+pytz==2025.2
 python-dateutil==2.9.0.post0
 schedule==1.2.2
 -e git+https://github.com/alexdlaird/django-health-check.git@4.0.2#egg=django-health-check
