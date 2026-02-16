@@ -3,7 +3,7 @@ djangorestframework==3.16.1
 django-pipeline==4.1.0
 django-dotenv==1.4.2
 django-redis==6.0.0
-mysqlclient==2.2.7
+mysqlclient==2.2.8
 pytz==2025.2
 python-dateutil==2.9.0.post0
 schedule==1.2.2
