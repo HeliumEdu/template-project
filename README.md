@@ -1,4 +1,4 @@
-![Python Versions](https://img.shields.io/badge/python-%203.8%20|%203.9%20|%203.10%20|%203.11%20-blue)
+![Python Versions](https://img.shields.io/badge/python-%203.9%20|%203.10%20|%203.11%20-blue)
 [![Coverage](https://img.shields.io/codecov/c/github/HeliumEdu/template-project)](https://codecov.io/gh/HeliumEdu/template-project)
 [![Build](https://img.shields.io/github/actions/workflow/status/HeliumEdu/template-project/build.yml)](https://github.com/HeliumEdu/template-project/actions/workflows/build.yml)
 ![GitHub License](https://img.shields.io/github/license/HeliumEdu/template-project)
