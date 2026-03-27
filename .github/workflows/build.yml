@@ -41,13 +41,13 @@ jobs:
       - name: Test
         run: BRANCH=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}} make test
       - name: Upload test coverage
-        if: ${{ !cancelled() }} && matrix.os == "ubuntu-latest" && matrix.python-version == "3.13"
+        if: ${{ !cancelled() && matrix.os == 'ubuntu-latest' && matrix.python-version == '3.13' }}
         uses: codecov/codecov-action@v6
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           directory: ./build/template-project-test-build/build/coverage
       - name: Upload test results
-        if: ${{ !cancelled() }} && matrix.os == "ubuntu-latest" && matrix.python-version == "3.13"
+        if: ${{ !cancelled() && matrix.os == 'ubuntu-latest' && matrix.python-version == '3.13' }}
         uses: codecov/codecov-action@v6
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
