@@ -48,7 +48,8 @@ jobs:
           directory: ./build/template-project-test-build/build/coverage
       - name: Upload test results
         if: ${{ !cancelled() }} && matrix.os == "ubuntu-latest" && matrix.python-version == "3.13"
-        uses: codecov/test-results-action@v1
+        uses: codecov/codecov-action@v6
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           directory: ./build/test-results
+          report_type: test_results
